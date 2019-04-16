@@ -9,6 +9,7 @@
 
   /* or just use this lmao https://bennettfeely.com/clippy/ */
   /* top left, top right, bottom right, bottom left */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
   &__logo-box {

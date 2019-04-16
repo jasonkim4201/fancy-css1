@@ -219,6 +219,82 @@ body {
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
 
+.card {
+  /* needed on the parent element to give that nice look that card is moving towards user */
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+  /* ayyy i can make a card flip */ }
+  .card__side {
+    font-size: 2rem;
+    height: 52rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* hides tha backside! */
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    /* need to use this to give the smooth edge because img image */
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    /* since backside is already at 180degs on hover it does to 0 */ }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+  .card__picture {
+    background-size: cover;
+    height: 23rem;
+    /* this will give it the colored filtered look! lmao microsoft edge doesn't support this feature*/
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("../../img/nat-5.jpg"); }
+    .card__picture--2 {
+      background-image: url("../../img/nat-5.jpg"); }
+    .card__picture--3 {
+      background-image: url("../../img/nat-5.jpg"); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%; }
+  .card__heading-span {
+    padding: 1rem 1.5rem;
+    /* this neat trick makes it so words are not edging on the box*/
+    /* wow google chrome not being able to support this without a webkit */
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+  .card__details {
+    padding: 3rem; }
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 2px solid #eee; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -253,6 +329,7 @@ body {
   position: relative;
   /* or just use this lmao https://bennettfeely.com/clippy/ */
   /* top left, top right, bottom right, bottom left */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
   .header__logo-box {
     position: absolute;
@@ -285,6 +362,11 @@ body {
   /* select all direct child elements */ }
   .section-features > * {
     transform: skewY(7deg); }
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 50rem 0;
+  margin-top: -10rem; }
 
 /* npm being weird with sass compiler and fails 50% of time on save. so using koala gui */
 /* universal selctor!!! */

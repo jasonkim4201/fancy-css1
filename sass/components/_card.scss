@@ -1,0 +1,115 @@
+.card {
+  /* needed on the parent element to give that nice look that card is moving towards user */
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+
+  /* ayyy i can make a card flip */
+  &__side {
+    font-size: 2rem;
+    height: 52rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* hides tha backside! */
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden; /* need to use this to give the smooth edge because img image */
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    &--front {
+      background-color: $color-white;
+    }
+    /* since backside is already at 180degs on hover it does to 0 */
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+      }
+
+    }
+      
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  // front side styling
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    /* this will give it the colored filtered look! lmao microsoft edge doesn't support this feature*/
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url("../../img/nat-5.jpg");
+    }
+
+    &--2 {
+      background-image: url("../../img/nat-5.jpg");
+    }
+
+    &--3 {
+      background-image: url("../../img/nat-5.jpg");
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+  }
+
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    /* this neat trick makes it so words are not edging on the box*/
+    /* wow google chrome not being able to support this without a webkit */
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    &--1 {
+      background-image: linear-gradient(to right bottom,
+        rgba($color-secondary-light, .85),
+        rgba($color-secondary-dark, .85));
+    }
+
+  }
+
+  &__details{
+    padding: 3rem;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;  
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 2px solid $color-grey-light-2;
+        }
+      }
+    }
+  }
+
+}
