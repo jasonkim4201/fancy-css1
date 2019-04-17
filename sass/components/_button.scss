@@ -39,6 +39,16 @@
 
   }
 
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-white;
+    }
+
+  }
+
   &::after {
     /* always need to specify a content */
     content: "";
