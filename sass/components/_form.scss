@@ -1,0 +1,55 @@
+.form {
+
+  &__group:not(:last-child) {
+    /* giving that nice space in between */
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    /* making input form to accept the custom selected font */
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, .5);
+    border: none;
+    /* this is to make it so the input box doesnt move because of the added 3px for border bottom so just add one thats invisible lmao */
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, .1);
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+
+    /* this only works in safari and chrome */
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+
+  }
+/* all below needed to make input transition possible */
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s;
+  }
+
+/* the plus + symbol means select direct adjacent sibling */
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+}
