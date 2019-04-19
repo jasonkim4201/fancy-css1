@@ -187,7 +187,8 @@
                                     <p class="card__price-only">Only</p>
                                     <p class="card__price-value">$297</p>
                                 </div>
-                                <a href="#" class="btn btn--white">Book now!</a>
+                                <!-- adding an anchor tag to show pop up -->
+                                <a href="#popup" class="btn btn--white">Book now!</a>
                             </div>
                         </div>
                     </div>
@@ -221,7 +222,7 @@
                                     <p class="card__price-only">Only</p>
                                     <p class="card__price-value">$497</p>
                                 </div>
-                                <a href="#" class="btn btn--white">Book now!</a>
+                                <a href="#popup" class="btn btn--white">Book now!</a>
                             </div>
                         </div>
                     </div>
@@ -254,7 +255,7 @@
                                     <p class="card__price-only">Only</p>
                                     <p class="card__price-value">$897</p>
                                 </div>
-                                <a href="#" class="btn btn--white">Book now!</a>
+                                <a href="#popup" class="btn btn--white">Book now!</a>
                             </div>
                         </div>
 
@@ -419,6 +420,25 @@
 
         </div>
     </footer>
+
+    <!-- that cool popup -->
+    <div class="popup" id="popup">
+        <div class="popup__content">
+            <div class="popup__left">
+                <img src="./img/nat-8.jpg" class="popup__img" alt="tour pic">
+                <img src="./img/nat-9.jpg" class="popup__img" alt="tour pic 2">
+            </div>
+            <div class="popup__right">
+                <!-- section tours will move to section tours and change target causing popup to close -->
+                <a href="#section-tours" class="popup__close">&times;</a>
+                <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
+                <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before booking</h3>
+                <p class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius blanditiis voluptas totam quam quas impedit ad, molestias, pariatur suscipit deserunt vel doloribus maiores quo tempora tenetur nisi enim autem! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae aut nobis molestiae provident cupiditate expedita voluptatem non aliquid soluta, distinctio consequuntur dolorem quidem fuga similique delectus aliquam necessitatibus, laudantium cum, hic repellendus possimus? Dolores ab sit, modi deleniti accusamus neque quam provident voluptates aliquam vel eum, atque sint beatae ex similique rerum? Ab unde dolorem corrupti sequi id ad facere dolor exercitationem officiis reiciendis. Tempora doloremque veniam quisquam.
+                </p>
+                <a href="#" class="btn btn--green">Book now</a>
+            </div>
+        </div>
+    </div>
 
     <!-- disgusting floats. still should try and get comfortable with this antiquated thing -->
     <!-- 
